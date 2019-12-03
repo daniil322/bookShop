@@ -1,0 +1,19 @@
+body {
+  background-color: gray;
+}
+h1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+tr {
+  width: 100%;
+}
+.halfATable {
+  width: 50%;
+}
+
+.modal {
+  background: blue;
+}
+.hover:hover {
+  color: red;
+}

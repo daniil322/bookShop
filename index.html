@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>BookShop</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+  </head>
+  <body onload="init()">
+    <h1>Welcome To The Book Shop</h1>
+    <table class="table table-sm table-dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th class="hover" onclick="sortBy('title')" scope="col">Title</th>
+          <th class="hover" scope="col" onclick="sortBy('price')">Price</th>
+          <th scope="col" class="halfATalble">Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <div class="modal update" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Update Price</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input type="txt" class="form" placeholder="Book Price" />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="openMudal(null,'.update')"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="updatePrice()"
+            >
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal read" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Provident, assumenda.
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="rating"></div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="openMudal(null,'.read')"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="formGroupExampleInput">Title</label>
+      <input type="txt" class="form-control" placeholder="Book Title" />
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Price</label>
+      <input type="txt" class="form-control" placeholder="Book Price" />
+    </div>
+
+    <button class="btn-dark" onclick=" readAndAddNewBook()">Add A Book</button>
+
+    <script src="js/store.js"></script>
+    <script src="js/storeContrroler.js"></script>
+    <script src="js/storeStorage.js"></script>
+  </body>
+</html>
